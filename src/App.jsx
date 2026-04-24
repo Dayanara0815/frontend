@@ -1,12 +1,15 @@
+import Navbar from './components/Navbar';
+
 function App() {
   return (
-    <div className="container mt-5">
-      <div className="alert alert-success" role="alert">
-        ¡Bootstrap se ha instalado correctamente en AdoptApp! 🐾
+    <div>
+      <Navbar />
+      <div className="container mt-4">
+        {/* Aquí irá el contenido de tus páginas más adelante */}
+        <h2>Bienvenido a AdoptApp</h2>
       </div>
-      <button className="btn btn-primary">Botón de prueba</button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
