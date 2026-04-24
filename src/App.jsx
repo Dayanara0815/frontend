@@ -1,3 +1,7 @@
+import { useState } from 'react'
+import { Button } from 'react-bootstrap'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom'
 
 // Layouts
@@ -13,15 +17,17 @@ import PetsManager from './pages/dashboard/PetsManager'
 import UserProfile from './pages/dashboard/UserProfile'
 
 import './App.css'
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
+ 
     <div className="app-container">
       <Routes>
         {/* SECCIÓN PÚBLICA */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
-
+        <Route path="/profile" element={<Profile />} />
         {/* SECCIÓN PRIVADA (CON SIDEBAR) */}
         {/* Todas estas rutas compartirán el DashboardLayout */}
         <Route path="/dashboard" element={<DashboardLayout />}>
