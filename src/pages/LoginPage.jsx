@@ -4,24 +4,30 @@ import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   return (
-    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh' }}>
-      <Card style={{ width: '400px', padding: '20px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>
+    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: '100vh', backgroundColor: 'var(--color-neutral-100)' }}>
+      <Card style={{ 
+        width: '450px', 
+        padding: '30px', 
+        border: 'none',
+        borderRadius: 'var(--radius-lg)',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
+      }}>
         <Card.Body>
-          <h2 className="text-center mb-4">Iniciar Sesión</h2>
+          <h2 className="text-center mb-4" style={{ color: 'var(--color-primary-700)', fontWeight: '700' }}>Bienvenido de nuevo</h2>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="tu@email.com" />
+              <Form.Label style={{ fontWeight: '500' }}>Email</Form.Label>
+              <Form.Control type="email" placeholder="tu@email.com" style={{ borderRadius: 'var(--radius-md)', padding: '12px' }} />
             </Form.Group>
             <Form.Group className="mb-4">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control type="password" placeholder="********" />
+              <Form.Label style={{ fontWeight: '500' }}>Contraseña</Form.Label>
+              <Form.Control type="password" placeholder="********" style={{ borderRadius: 'var(--radius-md)', padding: '12px' }} />
             </Form.Group>
-            <Button as={Link} to="/dashboard" variant="primary" className="w-100 mb-3">
+            <Button as={Link} to="/dashboard" variant="primary" className="w-100 mb-3 shadow-none">
               Entrar
             </Button>
             <div className="text-center">
-              <Link to="/" style={{ fontSize: '0.9rem' }}>Volver a la Landing</Link>
+              <Link to="/" style={{ color: 'var(--color-primary-700)', textDecoration: 'none', fontWeight: '500' }}>← Volver al inicio</Link>
             </div>
           </Form>
         </Card.Body>
