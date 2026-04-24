@@ -25,6 +25,20 @@ function App() {
         </button>
         <div className="mt-3">
           <Button variant="primary">Bootstrap Button</Button>
+          <Button variant="secondary">Bootstrap Button</Button>
+          <Button variant="success">Bootstrap Button</Button>
+          <Button variant="danger">Bootstrap Button</Button>
+          <Button variant="outline-danger">Bootstrap Button</Button>
+          <Button variant="warning">Bootstrap Button</Button>
+          <Button variant="outline-warning">Bootstrap Button</Button>
+          <Button variant="info">Bootstrap Button</Button>
+          <Button variant="outline-info">Bootstrap Button</Button>
+          <Button variant="light">Bootstrap Button</Button>
+          <Button variant="outline-light">Bootstrap Button</Button>
+          <Button variant="dark">Bootstrap Button</Button>
+          <Button variant="outline-dark">Bootstrap Button</Button>
+          <Button variant="link">Bootstrap Button</Button>
+          <Button variant="outline-link">Bootstrap Button</Button>
         </div>
       </section>
 
