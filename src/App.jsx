@@ -1,4 +1,4 @@
-import CatalogPage from './pages/CatalogPages/CatalogPage';
+import CatalogPage from './pages/CatalogPage';
 
 function App() {
   return (
