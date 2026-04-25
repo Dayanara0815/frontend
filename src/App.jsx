@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 
 // Páginas del Dashboard (Usuario)
 import DashboardHome from './pages/dashboard/DashboardHome';
+import MyPublications from './pages/dashboard/MyPublications';
 import PetsManager from './pages/dashboard/PetsManager';
 import UserProfile from './pages/dashboard/UserProfile';
 
@@ -38,6 +39,7 @@ function App() {
         <Route element={<ProtectedRoute user={user} allowedRole="user" />}>
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardHome />} />
+            <Route path="my-publications" element={<MyPublications />} />
             <Route path="pets" element={<PetsManager />} />
             <Route path="profile" element={<UserProfile />} />
           </Route>

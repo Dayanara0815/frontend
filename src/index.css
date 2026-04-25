@@ -1,157 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=Be+Vietnam+Pro:wght@400;500&display=swap');
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fafaf5;
+  /* Tokens de Diseño Base */
+  --color-primary-500: #8daa91; /* Verde Base */
+  --color-primary-700: #5f7e6d; /* Verde Oscuro (Botones) */
+  --color-secondary-500: #f5f5dc; /* Crema */
+  --color-neutral-100: #f7f7f2; /* Fondo */
+  --color-text-900: #2d3436;
+  --color-text-muted: #6b6375;
+
+  /* Tipografías */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+
+  /* Tokens de Bootstrap (Sobrescribir variables) */
+  --bs-primary: var(--color-primary-700);
+  --bs-primary-rgb: 95, 126, 109;
+  --bs-secondary: var(--color-secondary-500);
+  --bs-secondary-rgb: 245, 245, 220;
+  --bs-body-bg: var(--color-neutral-100);
+  --bs-body-color: var(--color-text-900);
+  --bs-body-font-family: var(--font-body);
+  --bs-heading-font-family: var(--font-heading);
+
+  /* Bordes y Sombras */
+  --radius-xl: 32px;
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.05);
+
+  /* Compatibilidad con estilos anteriores */
+  --text: var(--color-text-muted);
+  --text-h: var(--color-text-900);
+  --bg: var(--color-neutral-100);
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+}
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+* {
+  box-sizing: border-box;
+}
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light; /* solo light — evita el fondo oscuro del sistema */
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-900);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=Be+Vietnam+Pro:wght@400;500&display=swap');
+}
 
-  :root {
-    /* Escala de Colores (Basada en tu diseño) */
-    --color-primary-500: #8daa91; /* Verde Base */
-    --color-primary-700: #5f7e6d; /* Verde Oscuro (Botones) */
-    --color-secondary-500: #f5f5dc; /* Crema */
-    --color-neutral-100: #f7f7f2; /* Fondo */
-    --color-text-900: #2d3436;
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    /* Sobrescribir variables de Bootstrap con la escala */
-    --bs-primary: var(--color-primary-700);
-    --bs-primary-rgb: 95, 126, 109;
-    --bs-secondary: var(--color-secondary-500);
-    --bs-secondary-rgb: 245, 245, 220;
-    --bs-body-bg: var(--color-neutral-100);
-    --bs-body-color: var(--color-text-900);
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary-700);
+  margin-bottom: 1rem;
+}
 
-    /* Tipografías */
-    --font-heading: 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Be Vietnam Pro', sans-serif;
+h1 {
+  font-size: 3.5rem;
+  letter-spacing: -1.68px;
+  margin: 2rem 0;
+}
 
-    --bs-body-font-family: var(--font-body);
-    --bs-heading-font-family: var(--font-heading);
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
 
-    /* Tokens de Diseño */
-    --radius-xl: 32px;
-    --radius-lg: 16px;
-    --radius-md: 8px;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
+/* Componentes */
+.btn {
+  border-radius: var(--radius-xl) !important;
+  padding: 10px 28px !important;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
 
-  /* modo oscuro eliminado — el proyecto usa paleta fija clara */
+.btn-primary {
+  --bs-btn-bg: var(--color-primary-700);
+  --bs-btn-border-color: var(--color-primary-700);
+  --bs-btn-hover-bg: #4a6356;
+  --bs-btn-hover-border-color: #4a6356;
+}
 
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #fafaf5;
-    * {
-      box-sizing: border-box;
-    }
+/* Utilidades */
+.rounded-custom {
+  border-radius: var(--radius-lg) !important;
+}
 
-    body {
-      margin: 0;
-      background-color: var(--neutral-bg);
-      color: var(--text-main);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  background-color: var(--code-bg);
+  border-radius: 4px;
+}
 
-    #root {
-      width: 100%;
-      max-width: 100vw;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
-      text-align: left;
-      box-sizing: border-box;
-      background-color: #fafaf5; /* mismo fondo que body y .profile-page */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+/* Clases específicas para el Dashboard */
+.dashboard-link {
+  color: white !important;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  transition: background 0.3s;
+}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 56px;
-      letter-spacing: -1.68px;
-      margin: 32px 0;
-
-      @media (max-width: 1024px) {
-        font-size: 36px;
-        margin: 20px 0;
-      }
-    }
-
-    h2 {
-      font-size: 24px;
-      line-height: 118%;
-      letter-spacing: -0.24px;
-      margin: 0 0 8px;
-
-      @media (max-width: 1024px) {
-        font-size: 20px;
-      }
-    }
-
-    p {
-      margin: 0;
-    }
-    /* Estilos de Utilidad basados en el diseño */
-    .rounded-custom {
-      border-radius: var(--radius-lg) !important;
-    }
-
-    /* Ajustes globales para botones de Bootstrap */
-    .btn {
-      border-radius: var(--radius-xl) !important;
-      padding: 10px 28px !important;
-      font-weight: 500;
-      font-family: var(--font-body);
-      transition: all 0.2s ease;
-    }
-
-    code {
-      font-size: 15px;
-      line-height: 135%;
-      padding: 4px 8px;
-      background: var(--code-bg);
-    }
-    .btn-primary {
-      --bs-btn-bg: var(--color-primary-700);
-      --bs-btn-border-color: var(--color-primary-700);
-      --bs-btn-hover-bg: #4a6356;
-      --bs-btn-hover-border-color: #4a6356;
-    }
-  }
+.dashboard-link:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
