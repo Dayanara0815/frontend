@@ -32,7 +32,7 @@ const PetCard = ({
               }`}
               style={{ fontSize: '0.65rem', backdropFilter: 'blur(4px)', backgroundColor: isSpecialNeed ? '' : 'rgba(255,255,255,0.9)' }}
             >
-              {isSpecialNeed ? 'Special Need' : 'New Arrival'}
+              {isSpecialNeed ? 'Necesidad Especial' : 'Recién Llegado'}
             </span>
           </div>
         )}
