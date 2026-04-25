@@ -2,10 +2,10 @@ import React from 'react';
 
 const CatalogNavbar = () => {
   return (
-    <nav className="navbar navbar-expand-md fixed-top glass-nav">
+    <nav className="navbar navbar-expand-md fixed-top glass-nav py-3">
       <div className="container-xl d-flex justify-content-between align-items-center">
         
-        {/* Brand */}
+        {/* Brand (Left) */}
         <a className="navbar-brand fs-4 fw-bold tracking-tighter text-primary font-headline" href="#">
           AdoptApp
         </a>
@@ -15,31 +15,57 @@ const CatalogNavbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Links and Buttons */}
-        <div className="collapse navbar-collapse justify-content-center" id="navbarContent">
-          <ul className="navbar-nav mx-auto mb-2 mb-md-0 gap-4 font-headline fw-medium" style={{ fontSize: '14px', letterSpacing: '0.025em' }}>
-            <li className="nav-item">
-              <a className="nav-link text-primary fw-bold border-bottom border-primary border-2 pb-1 active" href="#">Find Pets</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-secondary" href="#">Shelters</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-secondary" href="#">Success Stories</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-secondary" href="#">About Us</a>
-            </li>
-          </ul>
-
-          <div className="d-flex align-items-center gap-3 mt-3 mt-md-0">
-            <button className="btn btn-link text-secondary fw-medium text-decoration-none rounded-pill px-4" style={{ fontSize: '14px' }}>
-              Sign In
-            </button>
-            <button className="btn bg-primary text-on-primary rounded-pill px-4 fw-medium shadow-sm" style={{ fontSize: '14px' }}>
-              Register
-            </button>
+        <div className="collapse navbar-collapse" id="navbarContent">
+          
+          {/* Central Search Bar */}
+          <div className="mx-auto w-100 my-3 my-md-0 d-flex justify-content-center px-md-4" style={{ maxWidth: '600px' }}>
+            <div className="position-relative w-100">
+              <span className="material-symbols-outlined position-absolute top-50 start-0 translate-middle-y ms-3 text-outline" style={{ fontSize: '1.2rem' }}>search</span>
+              <input 
+                type="text" 
+                className="form-control bg-surface-container-lowest border-0 rounded-pill py-2 ps-5 shadow-sm focus-ring text-on-surface" 
+                style={{ fontSize: '0.875rem' }} 
+                placeholder="Buscar por nombre, especie o raza..." 
+              />
+            </div>
           </div>
+
+          {/* Right Section: Buttons & Profile */}
+          <div className="d-flex align-items-center gap-3 justify-content-center mt-3 mt-md-0">
+            <button className="btn bg-primary text-on-primary rounded-pill px-4 py-2 fw-bold shadow-sm d-flex align-items-center gap-2 transition-all hover:-translate-y-0.5" style={{ fontSize: '14px' }}>
+              <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>add_circle</span>
+              Publicar Mascota
+            </button>
+            
+            {/* Profile Dropdown */}
+            <div className="dropdown">
+              <button 
+                className="btn btn-light rounded-circle p-1 d-flex align-items-center justify-content-center border-0 bg-transparent text-secondary" 
+                type="button" 
+                id="profileDropdown" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: '32px' }}>account_circle</span>
+              </button>
+              <ul className="dropdown-menu dropdown-menu-end border-0 shadow-lg-custom rounded-4 mt-2 bg-surface-container-lowest" aria-labelledby="profileDropdown">
+                <li>
+                  <a className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-on-surface" href="#" style={{ fontSize: '14px' }}>
+                    <span className="material-symbols-outlined text-outline" style={{ fontSize: '20px' }}>person</span>
+                    Mi Perfil
+                  </a>
+                </li>
+                <li><hr className="dropdown-divider opacity-10 my-1" /></li>
+                <li>
+                  <a className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-error" href="#" style={{ fontSize: '14px' }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>logout</span>
+                    Cerrar Sesión
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
         </div>
 
       </div>
