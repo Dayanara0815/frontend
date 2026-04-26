@@ -8,6 +8,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import LoginPage from './pages/LoginPage';
+import CatalogPage from './pages/Catalog/CatalogPage';
 import Registro from './pages/Registro';
 import VerificarRegistro from './pages/VerificarRegistro';
 import RegistroExitoso from './pages/RegistroExitoso';
@@ -53,6 +54,8 @@ function App() {
         <Route path="/nueva-contrasena" element={<NuevaContrasena />} />
         
         <Route path="/profile" element={<Profile />} />
+        <Route path="/catalogo" element={<CatalogPage />} />
+
 
         {/* SECCIÓN USUARIO ADOPTANTE */}
         <Route element={<ProtectedRoute user={user} allowedRole="user" />}>
