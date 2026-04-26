@@ -4,13 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Layouts
 import DashboardLayout from './layouts/DashboardLayout';
 
-// Páginas Públicas
+// Páginas Públicas (IMPORTAMOS EL NUEVO LOGIN Y LAS PÁGINAS QUE FALTABAN)
 import LandingPage from './pages/LandingPage';
+import Login from './pages/Login';
 import LoginPage from './pages/LoginPage';
 import CatalogPage from './pages/Catalog/CatalogPage';
+import Registro from './pages/Registro';
+import VerificarRegistro from './pages/VerificarRegistro';
+import RegistroExitoso from './pages/RegistroExitoso';
+import RecuperarContrasena from './pages/RecuperarContrasena';
+import VerificarRecuperacion from './pages/VerificarRecuperacion';
+import NuevaContrasena from './pages/NuevaContrasena';
 
-
-// Páginas del Dashboard (Usuario)
+// Páginas del Dashboard
 import DashboardHome from './pages/dashboard/DashboardHome';
 import MyPublications from './pages/dashboard/MyPublications';
 import PetsManager from './pages/dashboard/PetsManager';
@@ -31,10 +37,22 @@ function App() {
       <Routes>
         {/* SECCIÓN PÚBLICA */}
         <Route path="/" element={<LandingPage />} />
+        
+        {/* LOGIN: Si ya está logueado, redirige según rol. Si no, muestra el Login verde */}
         <Route 
           path="/login" 
-          element={user ? <Navigate to={user.role === 'admin' ? '/admin/dashboard' : '/dashboard'} replace /> : <LoginPage />} 
+          element={user ? <Navigate to={user.role === 'admin' ? '/admin/dashboard' : '/dashboard'} replace /> : <Login />} 
         />
+
+        {/* NUEVAS RUTAS QUE FALTABAN (Ahora sí funcionarán) */}
+        <Route path="/login-page" element={<LoginPage />} />
+        <Route path="/registro" element={<Registro />} />
+        <Route path="/verificar-registro" element={<VerificarRegistro />} />
+        <Route path="/registro-exitoso" element={<RegistroExitoso />} />
+        <Route path="/recuperar-contrasena" element={<RecuperarContrasena />} />
+        <Route path="/verificar-recuperacion" element={<VerificarRecuperacion />} />
+        <Route path="/nueva-contrasena" element={<NuevaContrasena />} />
+        
         <Route path="/profile" element={<Profile />} />
         <Route path="/catalogo" element={<CatalogPage />} />
 
