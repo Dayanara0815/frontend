@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/landing/Navbar';
+import Footer from '../components/landing/Footer';
 
 export default function Registro() {
   const nav = useNavigate();
@@ -27,33 +29,39 @@ export default function Registro() {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <h2 style={styles.logo}>🐾 AdoptApp</h2>
-        <h3 style={styles.title}>Crear Cuenta</h3>
-        {error && <p style={styles.error}>{error}</p>}
-        <input style={styles.input} placeholder="Nombres"
-          onChange={e => setForm({...form, nombres: e.target.value})} />
-        <input style={styles.input} placeholder="Apellidos"
-          onChange={e => setForm({...form, apellidos: e.target.value})} />
-        <label style={styles.label}>Fecha de nacimiento</label>
-        <input style={styles.input} type="date"
-          onChange={e => setForm({...form, fechaNacimiento: e.target.value})} />
-        <input style={styles.input} placeholder="Correo electrónico"
-          onChange={e => setForm({...form, correo: e.target.value})} />
-        <input style={styles.input} type="password" placeholder="Contraseña"
-          onChange={e => setForm({...form, contrasena: e.target.value})} />
-        <input style={styles.input} type="password" placeholder="Confirmar contraseña"
-          onChange={e => setForm({...form, confirmarContrasena: e.target.value})} />
-        <button style={styles.btn} onClick={handleSubmit}>Registrarse</button>
-        <p style={styles.link} onClick={() => nav('/')}>¿Ya tienes cuenta? <b>Inicia sesión</b></p>
+    <>
+      <Navbar />
+      <div style={styles.wrapper}>
+        <div style={styles.container}>
+          <div style={styles.card}>
+            <h3 style={styles.title}>Registrarse</h3>
+            {error && <p style={styles.error}>{error}</p>}
+            <input style={styles.input} placeholder="Nombres"
+              onChange={e => setForm({...form, nombres: e.target.value})} />
+            <input style={styles.input} placeholder="Apellidos"
+              onChange={e => setForm({...form, apellidos: e.target.value})} />
+            <label style={styles.label}>Fecha de nacimiento</label>
+            <input style={styles.input} type="date"
+              onChange={e => setForm({...form, fechaNacimiento: e.target.value})} />
+            <input style={styles.input} placeholder="Correo electrónico"
+              onChange={e => setForm({...form, correo: e.target.value})} />
+            <input style={styles.input} type="password" placeholder="Contraseña"
+              onChange={e => setForm({...form, contrasena: e.target.value})} />
+            <input style={styles.input} type="password" placeholder="Confirmar contraseña"
+              onChange={e => setForm({...form, confirmarContrasena: e.target.value})} />
+            <button style={styles.btn} onClick={handleSubmit}>Registrarse</button>
+            <p style={styles.link} onClick={() => nav('/login')}>¿Ya tienes cuenta? <b>Inicia sesión</b></p>
+          </div>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 
 const styles = {
-  container: { display:'flex', justifyContent:'center', alignItems:'center', minHeight:'100vh', background:'#F7F7F2', padding:'2rem 0' },
+  wrapper: { paddingTop: '90px', paddingBottom: '60px', background: '#F7F7F2', boxSizing: 'border-box' },
+  container: { display:'flex', justifyContent:'center', alignItems:'center', background:'transparent', padding:'2rem 0' },
   card: { background:'white', padding:'2.5rem', borderRadius:'16px', boxShadow:'0 4px 24px rgba(0,0,0,0.08)', width:'400px' },
   logo: { textAlign:'center', color:'#8DAA91', fontSize:'1.5rem', marginBottom:'0.3rem' },
   title: { textAlign:'center', color:'#5F7E6D', fontSize:'1.2rem', fontWeight:'600', marginBottom:'1.5rem' },
