@@ -29,9 +29,7 @@ const AdminPets = () => {
           <tbody>
             {petsData.map((pet) => (
               <tr key={pet.id}>
-                <td className="px-4 py-3 align-middle text-secondary">
-                  #{pet.id}
-                </td>
+                <td className="px-4 py-3 align-middle text-label">#{pet.id}</td>
                 <td className="px-4 py-3 align-middle">
                   <div className="d-flex align-items-center gap-3">
                     <img
