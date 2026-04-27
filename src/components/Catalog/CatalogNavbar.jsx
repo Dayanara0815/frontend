@@ -70,15 +70,15 @@ const CatalogNavbar = () => {
                                 <li><hr className="dropdown-divider opacity-10 my-1" /></li>
                                 <li>
                                     {/* MODIFICADO: Agregamos onClick para cerrar sesión */}
-                                    <a 
-                                        className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-error" 
-                                        href="#" 
-                                        style={{ fontSize: '14px' }}
-                                        onClick={handleLogout} 
+                                    <button
+                                        className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-error"
+                                        type="button"
+                                        style={{ background: 'transparent', border: 'none', width: '100%', textAlign: 'left' }}
+                                        onClick={handleLogout}
                                     >
                                         <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>logout</span>
                                         Cerrar Sesión
-                                    </a>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
