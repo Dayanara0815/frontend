@@ -35,8 +35,8 @@ const CatalogSidebar = ({ onFilterApply }) => {
                     <label className="form-label text-uppercase fw-bold text-on-surface-variant tracking-widest mb-3" style={{ fontSize: '0.75rem' }}>Especie</label>
                     <div className="d-flex flex-column gap-2">
                         <div className="form-check d-flex align-items-center gap-2">
-                            <input className="form-check-input mt-0" type="checkbox" id="species-dogs" checked={localFilters.species.includes('dogs')} onChange={() => handleCheckbox('species', 'dogs')} />
-                            <label className="form-check-label text-on-surface fw-medium" style={{ fontSize: '0.875rem' }} htmlFor="species-dogs">
+                            <input className={`form-check-input mt-0 ${localFilters.species.includes('dogs') ? 'bg-primary border-primary' : ''}`} type="checkbox" id="species-dogs" checked={localFilters.species.includes('dogs')} onChange={() => handleCheckbox('species', 'dogs')} />
+                            <label className={`form-check-label ${localFilters.species.includes('dogs') ? 'text-primary fw-bold' : 'text-on-surface fw-medium'}`} style={{ fontSize: '0.875rem' }} htmlFor="species-dogs">
                                 Perros
                             </label>
                         </div>
@@ -47,8 +47,8 @@ const CatalogSidebar = ({ onFilterApply }) => {
                             </label>
                         </div>
                         <div className="form-check d-flex align-items-center gap-2">
-                            <input className="form-check-input mt-0" type="checkbox" id="species-birds" checked={localFilters.species.includes('others')} onChange={() => handleCheckbox('species', 'others')} />
-                            <label className="form-check-label text-on-surface fw-medium" style={{ fontSize: '0.875rem' }} htmlFor="species-birds">
+                            <input className={`form-check-input mt-0 ${localFilters.species.includes('others') ? 'bg-primary border-primary' : ''}`} type="checkbox" id="species-birds" checked={localFilters.species.includes('others')} onChange={() => handleCheckbox('species', 'others')} />
+                            <label className={`form-check-label ${localFilters.species.includes('others') ? 'text-primary fw-bold' : 'text-on-surface fw-medium'}`} style={{ fontSize: '0.875rem' }} htmlFor="species-birds">
                                 Otros
                             </label>
                         </div>
@@ -60,14 +60,14 @@ const CatalogSidebar = ({ onFilterApply }) => {
                     <label className="form-label text-uppercase fw-bold text-on-surface-variant tracking-widest mb-3" style={{ fontSize: '0.75rem' }}>Sexo</label>
                     <div className="d-flex flex-column gap-2">
                         <div className="form-check d-flex align-items-center gap-2">
-                            <input className="form-check-input mt-0" type="checkbox" id="sex-female" checked={localFilters.sex.includes('Hembra')} onChange={() => handleCheckbox('sex', 'Hembra')} />
-                            <label className="form-check-label text-on-surface fw-medium" style={{ fontSize: '0.875rem' }} htmlFor="sex-female">
+                            <input className={`form-check-input mt-0 ${localFilters.sex.includes('Hembra') ? 'bg-primary border-primary' : ''}`} type="checkbox" id="sex-female" checked={localFilters.sex.includes('Hembra')} onChange={() => handleCheckbox('sex', 'Hembra')} />
+                            <label className={`form-check-label ${localFilters.sex.includes('Hembra') ? 'text-primary fw-bold' : 'text-on-surface fw-medium'}`} style={{ fontSize: '0.875rem' }} htmlFor="sex-female">
                                 Hembra
                             </label>
                         </div>
                         <div className="form-check d-flex align-items-center gap-2">
-                            <input className="form-check-input mt-0" type="checkbox" id="sex-male" checked={localFilters.sex.includes('Macho')} onChange={() => handleCheckbox('sex', 'Macho')} />
-                            <label className="form-check-label text-on-surface fw-medium" style={{ fontSize: '0.875rem' }} htmlFor="sex-male">
+                            <input className={`form-check-input mt-0 ${localFilters.sex.includes('Macho') ? 'bg-primary border-primary' : ''}`} type="checkbox" id="sex-male" checked={localFilters.sex.includes('Macho')} onChange={() => handleCheckbox('sex', 'Macho')} />
+                            <label className={`form-check-label ${localFilters.sex.includes('Macho') ? 'text-primary fw-bold' : 'text-on-surface fw-medium'}`} style={{ fontSize: '0.875rem' }} htmlFor="sex-male">
                                 Macho
                             </label>
                         </div>
@@ -81,7 +81,7 @@ const CatalogSidebar = ({ onFilterApply }) => {
                         {['Cachorro', 'Joven', 'Adulto', 'Mayor'].map(ageOption => (
                             <div className="col-6" key={ageOption}>
                                 <button 
-                                    className={`btn w-100 py-2 fw-semibold shadow-sm ${localFilters.age === ageOption ? 'bg-secondary text-on-secondary border-0' : 'btn-outline-secondary border-outline-variant text-on-surface-variant'}`} 
+                                    className={`btn w-100 py-2 px-1 fw-semibold shadow-sm text-center ${localFilters.age === ageOption ? 'bg-secondary text-on-secondary border-0' : 'btn-outline-secondary border-outline-variant text-on-surface-variant'}`} 
                                     style={{ fontSize: '0.75rem', borderRadius: '0.5rem' }}
                                     onClick={() => setLocalFilters(prev => ({ ...prev, age: prev.age === ageOption ? '' : ageOption }))}
                                 >
