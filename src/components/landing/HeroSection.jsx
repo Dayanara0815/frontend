@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import heroDog from "../../assets/hero-dog.png";
 
 export default function HeroSection() {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ export default function HeroSection() {
               alt="Perro feliz"
               className="w-100 h-100"
               style={{ objectFit: "cover" }}
-              src="https://static.vecteezy.com/system/resources/thumbnails/074/214/382/small/smiling-purebred-golden-retriever-dog-portrait-sitting-happily-in-a-lush-green-field-bathed-in-warm-golden-hour-sunlight-free-photo.jpeg"
+              src={heroDog}
             />
           </div>
         </div>
