@@ -17,7 +17,6 @@ import VerificarRecuperacion from './pages/VerificarRecuperacion';
 import NuevaContrasena from './pages/NuevaContrasena';
 
 // Páginas del Dashboard
-import DashboardHome from './pages/dashboard/DashboardHome';
 import MyPublications from './pages/dashboard/MyPublications';
 import PetsManager from './pages/dashboard/PetsManager';
 import UserProfile from './pages/dashboard/UserProfile';
@@ -42,7 +41,7 @@ function App() {
         {/* integrarlo despues to={user.role === 'admin' ? '/admin/dashboard' : '/dashboard'}*/ }
         <Route 
           path="/login" 
-          element={user ? <Navigate to="/catalogo" replace /> : <Login />} 
+          element={user ? <Navigate to="/dashboard" replace /> : <Login />} 
         />
 
         {/* NUEVAS RUTAS QUE FALTABAN (Ahora sí funcionarán) */}
@@ -54,14 +53,15 @@ function App() {
         <Route path="/verificar-recuperacion" element={<VerificarRecuperacion />} />
         <Route path="/nueva-contrasena" element={<NuevaContrasena />} />
         
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/catalogo" element={<CatalogPage />} />
-
+        <Route element={<ProtectedRoute user={user} />}> 
+          <Route path="/profile" element={<Profile />} />
+        </Route>
 
         {/* SECCIÓN USUARIO ADOPTANTE */}
         <Route element={<ProtectedRoute user={user} allowedRole="user" />}>
           <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<DashboardHome />} />
+            <Route index element={<CatalogPage />} />
+            <Route path="catalogo" element={<CatalogPage />} />
             <Route path="my-publications" element={<MyPublications />} />
             <Route path="pets" element={<PetsManager />} />
             <Route path="profile" element={<UserProfile />} />

@@ -7,7 +7,7 @@ const DashboardLayout = () => {
   const { user, logout } = useAuth();
 
   const userLinks = [
-    { to: '/dashboard', label: 'Inicio' },
+    { to: '/dashboard/catalogo', label: 'Catálogo' },
     { to: '/dashboard/my-publications', label: 'Mis Publicaciones' },
     { to: '/dashboard/profile', label: 'Mi Perfil' },
   ];

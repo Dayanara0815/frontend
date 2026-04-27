@@ -45,8 +45,8 @@ export default function Login() {
       // 2. Si existe, lo logueamos en el Contexto
       login(usuarioEncontrado); 
       
-      // 3. Redirigimos al catálogo (o donde prefieras)
-      nav('/catalogo'); 
+      // 3. Redirigimos al catálogo dentro del dashboard
+      nav('/dashboard/catalogo'); 
     } else {
       // 4. Si no existe, mostramos error y NO dejamos pasar
       setError('Correo o contraseña incorrectos. Regístrate si no tienes cuenta.');
