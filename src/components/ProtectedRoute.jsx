@@ -14,7 +14,7 @@ const ProtectedRoute = ({ allowedRole, user, redirectTo = '/login' }) => {
 
   if (allowedRole && user.role !== allowedRole) {
     // Redirect to their respective dashboard if they try to access a route they shouldn't
-    const fallbackPath = user.role === 'admin' ? '/admin/dashboard' : '/dashboard';
+    const fallbackPath = user.role === 'admin' ? '/admin' : '/dashboard';
     return <Navigate to={fallbackPath} replace />;
   }
 

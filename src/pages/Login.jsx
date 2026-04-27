@@ -20,8 +20,12 @@ export default function Login() {
       // 2. Si existe, lo logueamos en el Contexto
       login(usuarioEncontrado); 
       
-      // 3. Redirigimos al catálogo dentro del dashboard
-      nav('/dashboard/catalogo'); 
+      // 3. Redirigimos según el rol
+      if (usuarioEncontrado.role === 'admin') {
+        nav('/admin');
+      } else {
+        nav('/dashboard/catalogo'); 
+      }
     } else {
       // 4. Si no existe, mostramos error y NO dejamos pasar
       setError(
@@ -56,6 +60,22 @@ export default function Login() {
             {/* ERROR CORREGIDO: Ahora llama a handleIngresar */}
             <button style={styles.btn} onClick={handleIngresar}>
               Ingresar
+            </button>
+
+            {/* BOTÓN TEMPORAL PARA DESARROLLO - BORRAR EN PRODUCCIÓN */}
+            <button 
+              style={{ ...styles.btn, background: '#4a654f', marginTop: '10px' }} 
+              onClick={() => {
+                login({
+                  id: 'admin-dev',
+                  name: 'Admin Test',
+                  correo: 'admin@test.com',
+                  role: 'admin'
+                });
+                nav('/admin/pets');
+              }}
+            >
+              Entrar como Admin (Dev)
             </button>
 
             <p style={styles.link} onClick={() => nav('/recuperar-contrasena')}>

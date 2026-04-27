@@ -7,7 +7,7 @@ import CatalogGrid from '../../components/Catalog/CatalogGrid';
 import './CatalogPage.css';
 
 const CatalogPage = () => {
-    const { data: petsData } = useLocalStorage('catalogPets_v4', mockPets);
+    const { data: petsData } = useLocalStorage('catalogPets_v6', mockPets);
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState({
         species: [],

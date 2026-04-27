@@ -21,6 +21,11 @@ import MyPublications from './pages/dashboard/MyPublications';
 import PetsManager from './pages/dashboard/PetsManager';
 import UserProfile from './pages/dashboard/UserProfile';
 
+// Páginas Admin
+import AdminPets from './pages/admin/AdminPets';
+import AdminAdoptions from './pages/admin/AdminAdoptions';
+import AdminUsers from './pages/admin/AdminUsers';
+
 // Componentes de Seguridad
 import ProtectedRoute from './components/ProtectedRoute';
 import { useAuth } from './context/authStore';
@@ -72,18 +77,10 @@ function App() {
         {/* SECCIÓN ADMINISTRADOR */}
         <Route element={<ProtectedRoute user={user} allowedRole="admin" />}>
           <Route path="/admin" element={<DashboardLayout />}>
-            <Route
-              path="dashboard"
-              element={<div>Panel de Administración - Resumen</div>}
-            />
-            <Route
-              path="pets-inventory"
-              element={<div>Gestión de Inventario de Mascotas</div>}
-            />
-            <Route
-              path="users"
-              element={<div>Administración de Usuarios</div>}
-            />
+            <Route index element={<Navigate to="pets" replace />} />
+            <Route path="pets" element={<AdminPets />} />
+            <Route path="adoptions" element={<AdminAdoptions />} />
+            <Route path="users" element={<AdminUsers />} />
           </Route>
         </Route>
 

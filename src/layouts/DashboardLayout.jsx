@@ -13,8 +13,8 @@ const DashboardLayout = () => {
   ];
 
   const adminLinks = [
-    { to: '/admin/dashboard', label: 'Panel Admin' },
-    { to: '/admin/pets-inventory', label: 'Inventario' },
+    { to: '/admin/pets', label: 'Mascotas' },
+    { to: '/admin/adoptions', label: 'Adopciones' },
     { to: '/admin/users', label: 'Gestionar Usuarios' },
   ];
 
