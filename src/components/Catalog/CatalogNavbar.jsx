@@ -61,23 +61,28 @@ const CatalogNavbar = () => {
                             </button>
                             <ul className="dropdown-menu dropdown-menu-end border-0 shadow-lg-custom rounded-4 mt-2 bg-surface-container-lowest" aria-labelledby="profileDropdown">
                                 <li>
-                                    <a className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-on-surface" href="#" style={{ fontSize: '14px' }}>
+                                    <button
+                                        className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-on-surface"
+                                        type="button"
+                                        style={{ fontSize: '14px', background: 'transparent', border: 'none', width: '100%', textAlign: 'left' }}
+                                        onClick={() => nav('/profile')}
+                                    >
                                         <span className="material-symbols-outlined text-outline" style={{ fontSize: '20px' }}>person</span>
                                         Mi Perfil
-                                    </a>
+                                    </button>
                                 </li>
                                 <li><hr className="dropdown-divider opacity-10 my-1" /></li>
                                 <li>
                                     {/* MODIFICADO: Agregamos onClick para cerrar sesión */}
-                                    <a 
-                                        className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-error" 
-                                        href="#" 
-                                        style={{ fontSize: '14px' }}
-                                        onClick={handleLogout} 
+                                    <button
+                                        className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-error"
+                                        type="button"
+                                        style={{ background: 'transparent', border: 'none', width: '100%', textAlign: 'left' }}
+                                        onClick={handleLogout}
                                     >
                                         <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>logout</span>
                                         Cerrar Sesión
-                                    </a>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
