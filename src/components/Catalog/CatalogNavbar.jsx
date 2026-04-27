@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Importamos para redirigir
+import { useNavigate, Link } from 'react-router-dom'; // Importamos para redirigir
 import { useAuth } from '../../context/authStore'; // Ajusta la ruta según tu carpeta
 
 const CatalogNavbar = () => {
@@ -62,10 +62,10 @@ const CatalogNavbar = () => {
                             </button>
                             <ul className="dropdown-menu dropdown-menu-end border-0 shadow-lg-custom rounded-4 mt-2 bg-surface-container-lowest" aria-labelledby="profileDropdown">
                                 <li>
-                                    <a className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-on-surface" href="#" style={{ fontSize: '14px' }}>
+                                    <Link className="dropdown-item d-flex align-items-center gap-2 py-2 px-4 fw-medium text-on-surface" to="/profile" style={{ fontSize: '14px' }}>
                                         <span className="material-symbols-outlined text-outline" style={{ fontSize: '20px' }}>person</span>
                                         Mi Perfil
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li><hr className="dropdown-divider opacity-10 my-1" /></li>
                                 <li>
