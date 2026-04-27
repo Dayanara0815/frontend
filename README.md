@@ -13,7 +13,6 @@ AdoptApp permite a los albergues publicar mascotas en adopción y a los usuarios
 
 ## 🖥️ Vistas de la aplicación
 
-<<<<<<< HEAD
 ### 🏠 Landing Page
 Página pública de presentación donde el visitante conoce la plataforma antes de registrarse. Incluye una Hero Section, sección de Quiénes Somos, Misión y Visión, y los Objetivos de AdoptApp.
 
