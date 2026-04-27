@@ -10,7 +10,9 @@ export const mockPets = [
         isNewArrival: true,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Macho'
+        sexo: 'Macho',
+        ageCategory: 'Joven',
+        size: 'Grande'
     },
     {
         id: 2,
@@ -23,7 +25,9 @@ export const mockPets = [
         isNewArrival: true,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Hembra'
+        sexo: 'Hembra',
+        ageCategory: 'Cachorro',
+        size: 'Mediano'
     },
     {
         id: 3,
@@ -36,7 +40,9 @@ export const mockPets = [
         isNewArrival: false,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Macho'
+        sexo: 'Macho',
+        ageCategory: 'Adulto',
+        size: 'Grande'
     },
     {
         id: 4,
@@ -49,7 +55,9 @@ export const mockPets = [
         isNewArrival: false,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Hembra'
+        sexo: 'Hembra',
+        ageCategory: 'Joven',
+        size: 'Pequeño'
     },
     {
         id: 5,
@@ -62,46 +70,54 @@ export const mockPets = [
         isNewArrival: false,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Macho'
+        sexo: 'Macho',
+        ageCategory: 'Adulto',
+        size: 'Grande'
     },
     {
         id: 6,
-        name: 'Mia',
+        name: 'Misty',
         age: '2 Años',
-        description: 'Una perrita rescatada muy agradecida. Es algo tímida al principio pero muy dulce.',
-        breed: 'Mestizo',
-        trait: 'Tímida',
-        image: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400',
+        description: 'Reservada pero profundamente cariñosa una vez que confía en ti. Busca un entorno familiar tranquilo.',
+        breed: 'Azul Ruso',
+        trait: 'Tranquila',
+        image: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?auto=format&fit=crop&q=80&w=400',
         isNewArrival: true,
         isSpecialNeed: false,
-        species: 'dogs',
-        sexo: 'Hembra'
+        species: 'cats',
+        sexo: 'Hembra',
+        ageCategory: 'Joven',
+        size: 'Pequeño'
     },
     {
         id: 7,
-        name: 'Toby',
-        age: '7 Años',
-        description: 'Un perro mayor que solo busca un sofá cómodo y caricias. Ideal para compañía tranquila.',
-        breed: 'Beagle',
-        trait: 'Mayor',
-        image: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&q=80&w=400',
+        name: 'Garfield',
+        age: '6 Años',
+        description: 'Maestro de las siestas y amante de la lasaña. Ideal para personas mayores.',
+        breed: 'Gato Persa',
+        trait: 'Perezoso',
+        image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=400',
         isNewArrival: false,
         isSpecialNeed: true,
-        species: 'dogs',
-        sexo: 'Macho'
+        species: 'cats',
+        sexo: 'Macho',
+        ageCategory: 'Mayor',
+        size: 'Mediano'
     },
     {
         id: 8,
-        name: 'Kira',
-        age: '8 Meses',
-        description: 'Mucha energía en un tamaño pequeño. Perfecta para quienes aman salir a trotar.',
-        breed: 'Jack Russell',
-        trait: 'Activa',
-        image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=400',
+        name: 'Iggy',
+        age: '2 Años',
+        description: 'Una iguana verde muy curiosa. Requiere un terrario amplio y calor.',
+        breed: 'Iguana Verde',
+        trait: 'Exótica',
+        image: 'https://images.unsplash.com/photo-1589408665715-db144af723e7?auto=format&fit=crop&q=80&w=400',
         isNewArrival: false,
         isSpecialNeed: false,
-        species: 'dogs',
-        sexo: 'Hembra'
+        species: 'others',
+        sexo: 'Hembra',
+        ageCategory: 'Joven',
+        size: 'Pequeño'
     },
     {
         id: 9,
@@ -114,7 +130,9 @@ export const mockPets = [
         isNewArrival: false,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Macho'
+        sexo: 'Macho',
+        ageCategory: 'Adulto',
+        size: 'Grande'
     },
     {
         id: 10,
@@ -127,6 +145,8 @@ export const mockPets = [
         isNewArrival: false,
         isSpecialNeed: false,
         species: 'dogs',
-        sexo: 'Hembra'
+        sexo: 'Hembra',
+        ageCategory: 'Adulto',
+        size: 'Mediano'
     }
 ];

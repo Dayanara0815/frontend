@@ -9,7 +9,7 @@ import Footer from '../../components/Catalog/CatalogFooter';
 import './CatalogPage.css';
 
 const CatalogPage = () => {
-    const { data: petsData } = useLocalStorage('catalogPets_v2', mockPets);
+    const { data: petsData } = useLocalStorage('catalogPets_v3', mockPets);
     const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState({
         species: [],
@@ -42,16 +42,13 @@ const CatalogPage = () => {
             if (!filters.sex.includes(pet.sexo)) return false;
         }
 
-        // 4. Filtro de Edad (Aproximación simple por palabra clave)
+        // 4. Filtro de Edad
         if (filters.age) {
-            const ageLower = pet.age.toLowerCase();
-            if (filters.age === 'Cachorro' && !ageLower.includes('meses') && !ageLower.includes('año')) return false;
-            if (filters.age === 'Joven' && (!ageLower.includes('año') || parseInt(pet.age) > 2)) return false;
-            // Solo para simplificar, verificamos que no sea vacío. (Aquí puedes ajustar tu lógica)
+            if (pet.ageCategory !== filters.age) return false;
         }
 
-        // 5. Filtro de Tamaño (Para mockPets no agregamos 'size' explícito, pero asumimos lógica si existiera)
-        if (filters.size !== 'Todos los Tamaños' && pet.size) {
+        // 5. Filtro de Tamaño
+        if (filters.size !== 'Todos los Tamaños') {
             if (pet.size !== filters.size) return false;
         }
 
