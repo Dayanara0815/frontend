@@ -43,12 +43,12 @@ export const usePets = () => {
     isError: petsQuery.isError,
     error: petsQuery.error,
     refreshPets: petsQuery.refetch,
-    
+
     // Mutations
     createPet: createPetMutation.mutateAsync,
     updatePet: updatePetMutation.mutateAsync,
     deletePet: deletePetMutation.mutateAsync,
-    
+
     isCreating: createPetMutation.isPending,
     isUpdating: updatePetMutation.isPending,
     isDeleting: deletePetMutation.isPending,
